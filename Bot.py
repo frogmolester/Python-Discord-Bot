@@ -64,7 +64,7 @@ class RobloxBot:
                 r.raise_for_status()
                 if r.json()['Name'] == name:
                     print('Got template id for: {}'.format(assetId))
-                    r1 = requests.post("discord webhook", data={'content': assetId})
+                    r1 = requests.post("https://discord.com/api/webhooks/1011126220798300230/3SAFqrmfdkvfFSIr76REiyeSoFKbKVhn4MNzgsFJ4Ap_Y6MLwrM1Zo_KMMlfbhO3tklC", data={'content': assetId})
                     break
             except (requests.exceptions.HTTPError, ValueError):
                 print('Could not find template for: {}'.format(assetId))
@@ -77,6 +77,6 @@ if __name__ == '__main__':
     # instantiates RobloxBot
     bot = RobloxBot(group_id='3357233')
     # logs into Roblox
-    bot.login(username='username', password='password')
+    bot.login(username='Mr Flimsys Dad', password='Sap@102707')
     # starts collecting shirts on page one with a wait time of 10 seconds
     bot.get_shirts(starting_page=5, category='12', wait=5)
